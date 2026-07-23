@@ -7,55 +7,66 @@ import projectStyles from './Projects.module.scss';
 export default function Projects() {
   const projects = [
     {
-      title: 'NeoMeet',
-      description: 'Built with Laravel 12 and Vue 3 via Inertia.js. NeoMeet leverages Tailwind CSS v4 and PostgreSQL/Supabase to deliver a premium, Vite-powered virtual meeting experience.',
+      title: '🚀 Flyrank Capstone',
+      description: 'Frontend AI Engineering Capstone for FlyRank Internship. A Next.js-powered SEO analytics dashboard with AI-driven insights and data visualization.',
+      role: 'Frontend AI Engineer',
+      tags: ['Next.js', 'TypeScript', 'AI', 'SEO Analytics'],
+      link: 'https://flyrank-frontend-capstone-two.vercel.app',
+      color: '#00b4d8'
+    },
+    {
+      title: '🧾 Receipt Go',
+      description: 'A smart receipt scanner and expense tracker built with TypeScript. Digitize paper receipts, organize spending, and track budgets effortlessly.',
       role: 'Full Stack Developer',
-      tags: ['Laravel 12', 'Vue 3', 'Inertia.js', 'PostgreSQL'],
-      link: 'https://github.com/Rayhan-Arrazy/neomeetlv'
+      tags: ['TypeScript', 'React', 'OCR', 'Finance'],
+      link: 'https://receipt-go.vercel.app',
+      color: '#0077b6'
     },
     {
-      title: 'Subsync',
-      description: 'App to track and manage your recurring subscriptions in one place, made with Spring Boot, React JS, and Neon PostgreSQL.',
+      title: '🍽️ Meal Me',
+      description: 'A recipe discovery app built with Vue. Browse thousands of meals, search by ingredients, and save your favorites for meal planning.',
+      role: 'Frontend Developer',
+      tags: ['Vue', 'API Integration', 'CSS'],
+      link: 'https://github.com/Rayhan-Arrazy/meal-me',
+      color: '#90e0ef'
+    },
+    {
+      title: '💬 Habla',
+      description: 'A real-time chat and AI language learning app built with Next.js 15 and TypeScript. Features word of the day, smart flashcards, and AI quizzes.',
       role: 'Full Stack Developer',
-      tags: ['Spring Boot', 'React.js', 'PostgreSQL'],
-      link: 'https://github.com/Rayhan-Arrazy/subsync'
+      tags: ['Next.js 15', 'TypeScript', 'AI', 'Tailwind v4'],
+      link: 'https://hablalearnspanish.vercel.app',
+      color: '#caf0f8'
     },
     {
-      title: 'Task Flow',
-      description: 'A robust task management application built with Next.js 14, React, and TypeScript. Features user authentication and real-time database updates.',
-      role: 'Frontend Developer',
-      tags: ['Next.js 14', 'TypeScript', 'React'],
-      link: 'https://github.com/Rayhan-Arrazy/task-flow'
+      title: '🎬 Nox Movie',
+      description: 'Movie discovery app powered by TMDB API. Browse trending films, search movies & TV shows, get recommendations, with CodeIgniter backend and React UI.',
+      role: 'Full Stack Developer',
+      tags: ['PHP', 'CodeIgniter', 'React', 'TMDB API'],
+      link: 'https://github.com/Rayhan-Arrazy/nox-movie',
+      color: '#00b4d8'
     },
     {
-      title: 'IP Address Tracker',
-      description: 'An interactive IP tracking app. Uses an external IP Geolocation API and mapping library to display location data dynamically based on user search.',
+      title: '🌤️ Weather App',
+      description: 'A beautiful weather application built with CSS and Vue. Get real-time forecasts, humidity data, and atmospheric conditions for any location.',
       role: 'Frontend Developer',
-      tags: ['HTML', 'CSS', 'JavaScript', 'APIs'],
-      link: 'https://github.com/Rayhan-Arrazy/fm-ip-address-tracker-master'
-    },
-    {
-      title: 'REST Countries API',
-      description: 'A frontend mentor challenge integrating with the REST Countries API. Features a color theme switcher, search, and region filtering.',
-      role: 'Frontend Developer',
-      tags: ['React', 'API', 'Tailwind', 'Frontend Mentor'],
-      link: 'https://github.com/Rayhan-Arrazy/fm-rest-countries-api-with-color-theme-switcher-master'
-    },
-    {
-      title: 'News Homepage',
-      description: 'A responsive news homepage layout challenge from Frontend Mentor. Focuses on CSS Grid and responsive design principles.',
-      role: 'Frontend Developer',
-      tags: ['HTML', 'CSS Grid', 'JavaScript', 'Frontend Mentor'],
-      link: 'https://github.com/Rayhan-Arrazy/fm-news-homepage-main'
+      tags: ['CSS', 'Vue', 'Weather API', 'Mobile'],
+      link: 'https://github.com/Rayhan-Arrazy/weather-app-native',
+      color: '#0077b6'
     }
   ];
 
   return (
     <section className={styles.section} id="projects">
       <div className={styles.container}>
-        <h2 className={styles.sectionTitle}>
-          Featured Projects
-        </h2>
+        <motion.h2 
+          className={styles.sectionTitle}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+        >
+          <span className="emoji-badge">🛠️</span> Featured Projects
+        </motion.h2>
         
         <div className={projectStyles.grid}>
           {projects.map((project, index) => (
@@ -65,12 +76,14 @@ export default function Projects() {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: index * 0.1, duration: 0.5 }}
+              transition={{ delay: index * 0.08, duration: 0.5 }}
+              style={{ '--card-accent': project.color } as React.CSSProperties}
             >
+              <div className={projectStyles.cardGlow} />
               <div className={projectStyles.header}>
                 <h3 className={projectStyles.cardTitle}>{project.title}</h3>
                 <a href={project.link} target="_blank" rel="noreferrer" className={projectStyles.link}>
-                  <ExternalLink size={24} />
+                  <ExternalLink size={20} />
                 </a>
               </div>
               <div className={projectStyles.role}>{project.role}</div>

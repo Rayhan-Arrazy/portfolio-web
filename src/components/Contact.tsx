@@ -45,9 +45,11 @@ export default function Contact() {
           transition={{ duration: 0.6 }}
         >
           <div className={contactStyles.header}>
-            <h2 className={styles.sectionTitle} style={{ marginBottom: '1rem' }}>Get In Touch</h2>
+            <h2 className={styles.sectionTitle} style={{ marginBottom: '1rem' }}>
+              <span className="emoji-badge">📬</span> Get In Touch
+            </h2>
             <p className={contactStyles.subtitle}>
-              Send a message to test the API flow. An <strong style={{color: '#c4b5fd'}}>AI agent</strong> will automatically read and summarize your comment.
+              Drop me a message and an <strong style={{color: '#00b4d8'}}>AI agent</strong> will summarize it instantly ✨
             </p>
           </div>
 
@@ -63,7 +65,7 @@ export default function Contact() {
                 >
                   <CheckCircle2 size={64} className="text-accent" style={{ marginBottom: '1.5rem' }} />
                   <h3>Message Sent Successfully!</h3>
-                  <p>Check your terminal for the Ethereal Email preview link.</p>
+                  <p>Your inquiry and AI summary have been dispatched directly to <strong>arrazyrayhan123@gmail.com</strong>! 📬</p>
                   
                   <div className={contactStyles.aiBox}>
                     <h4><Sparkles size={16} /> AI Summary</h4>

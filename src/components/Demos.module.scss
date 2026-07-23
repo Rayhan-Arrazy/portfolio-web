@@ -1,0 +1,245 @@
+.subtitle {
+  text-align: center;
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin: -1rem auto 3rem;
+  line-height: 1.7;
+  
+  strong {
+    color: var(--accent-color);
+  }
+}
+
+.grid {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 100%;
+}
+
+.demoContainer {
+  width: 100%;
+}
+
+.card {
+  padding: 1.5rem 2rem;
+  position: relative;
+  overflow: hidden;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--demo-gradient);
+    opacity: 0.85;
+    transition: opacity 0.3s ease;
+  }
+  
+  &:hover::before,
+  &.active::before {
+    opacity: 1;
+  }
+}
+
+.active {
+  border-color: var(--accent-color);
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 1rem;
+  
+  @media (max-width: 700px) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+.cardInfo {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  flex: 1;
+}
+
+.emoji {
+  font-size: 2.5rem;
+  flex-shrink: 0;
+  line-height: 1;
+}
+
+.cardTitle {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 0.3rem;
+  color: var(--text-primary);
+}
+
+.cardDesc {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.cardActions {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  flex-shrink: 0;
+}
+
+.playBtn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.7rem 1.5rem;
+  border-radius: 50px;
+  font-weight: 800;
+  font-size: 0.9rem;
+  cursor: pointer;
+  border: none;
+  background: var(--accent-color);
+  color: #03045e;
+  box-shadow: 0 4px 15px rgba(0, 180, 216, 0.35);
+  transition: all 0.3s ease;
+  
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 180, 216, 0.55);
+    background: #caf0f8;
+    color: #03045e;
+  }
+}
+
+.playBtnActive {
+  background: var(--accent-secondary);
+  color: #ffffff;
+  border: 1px solid var(--accent-color);
+  
+  &:hover {
+    background: #005a8d;
+    box-shadow: none;
+  }
+}
+
+.repoLink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: rgba(0, 119, 182, 0.25);
+  border: 1px solid var(--card-border);
+  color: var(--text-secondary);
+  transition: all 0.3s ease;
+  
+  &:hover {
+    color: var(--text-primary);
+    border-color: var(--accent-color);
+    background: rgba(0, 180, 216, 0.25);
+  }
+}
+
+.tagRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tag {
+  background: rgba(0, 119, 182, 0.25);
+  color: var(--text-primary);
+  padding: 0.3rem 0.85rem;
+  border-radius: 50px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  border: 1px solid var(--card-border);
+}
+
+/* Iframe Preview Area */
+.iframeWrapper {
+  border-radius: 0 0 20px 20px;
+  overflow: hidden;
+  background: #03045e;
+  border: 1px solid var(--card-border);
+  border-top: none;
+  margin-top: -1px;
+  transition: height 0.4s ease;
+}
+
+.expanded {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9999;
+  border-radius: 0;
+  margin-top: 0;
+  height: 100vh !important;
+}
+
+.iframeToolbar {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.6rem 1.2rem;
+  background: rgba(0, 119, 182, 0.3);
+  border-bottom: 1px solid var(--card-border);
+}
+
+.dots {
+  display: flex;
+  gap: 6px;
+  
+  span {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+  }
+}
+
+.urlBar {
+  flex: 1;
+  background: rgba(3, 4, 94, 0.8);
+  border: 1px solid var(--card-border);
+  padding: 0.35rem 1rem;
+  border-radius: 6px;
+  color: var(--text-secondary);
+  font-size: 0.8rem;
+  font-family: monospace;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.expandBtn {
+  background: transparent;
+  border: none;
+  color: var(--text-secondary);
+  cursor: pointer;
+  padding: 0.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.3s ease;
+  
+  &:hover {
+    color: var(--text-primary);
+  }
+}
+
+.iframe {
+  width: 100%;
+  height: calc(100% - 40px);
+  border: none;
+  background: white;
+}

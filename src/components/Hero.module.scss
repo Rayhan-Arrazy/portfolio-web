@@ -17,12 +17,14 @@
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  background: rgba(56, 189, 248, 0.1);
-  color: var(--accent-color);
-  padding: 0.5rem 1rem;
+  background: rgba(0, 119, 182, 0.25);
+  color: var(--text-primary);
+  padding: 0.5rem 1.2rem;
   border-radius: 50px;
   font-weight: 600;
   margin-bottom: 2rem;
+  border: 1px solid var(--card-border);
+  box-shadow: 0 4px 15px rgba(0, 180, 216, 0.25);
 }
 
 .title {
@@ -30,12 +32,13 @@
   font-weight: 800;
   line-height: 1.1;
   margin-bottom: 1.5rem;
+  color: var(--text-primary);
 }
 
 .subtitle {
   font-size: clamp(1.1rem, 3vw, 1.3rem);
   color: var(--text-secondary);
-  line-height: 1.6;
+  line-height: 1.7;
   margin-bottom: 2.5rem;
 }
 
@@ -43,6 +46,8 @@
   display: flex;
   gap: 1rem;
   align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .socials {
@@ -55,16 +60,41 @@
   align-items: center;
   gap: 0.5rem;
   background: var(--accent-color);
-  color: #000;
+  color: #03045e;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  font-weight: 800;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border: none;
+  box-shadow: 0 6px 20px rgba(0, 180, 216, 0.4);
+  
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 28px rgba(0, 180, 216, 0.65);
+    background: #caf0f8;
+    color: #03045e;
+  }
+}
+
+.btnGhost {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
   padding: 1rem 2rem;
   border-radius: 50px;
   font-weight: 700;
   text-decoration: none;
+  color: var(--text-primary);
+  background: rgba(0, 119, 182, 0.2);
+  border: 1px solid var(--card-border);
   transition: all 0.3s ease;
   
   &:hover {
+    background: var(--accent-color);
+    color: #03045e;
     transform: translateY(-2px);
-    box-shadow: 0 4px 15px var(--accent-glow);
+    box-shadow: 0 6px 20px rgba(0, 180, 216, 0.45);
   }
 }
 
@@ -74,14 +104,16 @@
   justify-content: center;
   width: 52px;
   height: 52px;
-  background: var(--card-bg);
-  color: white;
+  background: rgba(0, 119, 182, 0.2);
+  color: var(--text-secondary);
   border-radius: 50%;
   border: 1px solid var(--card-border);
   transition: all 0.3s ease;
 
   &:hover {
-    background: rgba(255, 255, 255, 0.1);
+    background: var(--accent-color);
+    color: #03045e;
     transform: translateY(-2px);
+    border-color: var(--accent-color);
   }
 }

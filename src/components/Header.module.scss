@@ -9,10 +9,11 @@
 }
 
 .scrolled {
-  background: rgba(11, 15, 25, 0.9);
-  backdrop-filter: blur(10px);
+  background: rgba(3, 4, 94, 0.92);
+  backdrop-filter: blur(14px);
   padding: 1rem 0;
   border-bottom: 1px solid var(--card-border);
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.5);
 }
 
 .container {
@@ -30,6 +31,10 @@
   color: var(--text-primary);
 }
 
+.dot {
+  color: var(--accent-color);
+}
+
 .nav {
   display: flex;
   gap: 2rem;
@@ -37,11 +42,33 @@
   a {
     color: var(--text-secondary);
     text-decoration: none;
-    font-weight: 500;
+    font-weight: 600;
+    font-size: 0.95rem;
     transition: color 0.3s ease;
+    position: relative;
+    
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--accent-color);
+      transition: width 0.3s ease;
+    }
     
     &:hover {
-      color: var(--accent-color);
+      color: var(--text-primary);
+      
+      &::after {
+        width: 100%;
+      }
     }
+  }
+  
+  @media (max-width: 600px) {
+    gap: 1rem;
+    font-size: 0.85rem;
   }
 }

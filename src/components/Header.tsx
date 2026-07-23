@@ -14,11 +14,12 @@ export default function Header() {
   return (
     <header className={`${styles.header} ${scrolled ? styles.scrolled : ''}`}>
       <div className={styles.container}>
-        <div className={styles.logo}>RA.</div>
+        <div className={styles.logo}>RA<span className={styles.dot}>.</span></div>
         <nav className={styles.nav}>
           <a href="#home">Home</a>
           <a href="#about">About</a>
           <a href="#projects">Projects</a>
+          <a href="#demos">Demos</a>
           <a href="#contact">Contact</a>
         </nav>
       </div>
